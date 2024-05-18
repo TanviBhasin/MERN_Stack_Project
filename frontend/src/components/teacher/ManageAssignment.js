@@ -99,7 +99,7 @@ export default function ManageAssignment() {
                     <td>{el?.branchId?.branchName}</td>
                     <td>{el?.subjectId?.subjectName}</td>
                     <td>
-                    <img src={"http://localhost:4001/"+el?.assignment}  style={{height:"80px", width:"80px"}}/>
+                    <img src={BASE_URL+el?.assignment}  style={{height:"80px", width:"80px"}}/>
                     </td>
                     <td>{el?.duedate}</td>
                     <td>{el?.marks}</td>
