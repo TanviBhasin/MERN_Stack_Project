@@ -1,5 +1,5 @@
 import axios from "axios";
-export const BASE_URL="http://localhost:4001/"
+export const BASE_URL="https://mern-backend-gules.vercel.app/g"
 class ApiServices{
     getToken(){
         let obj={
