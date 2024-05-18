@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import ApiServices from "../auth/ApiServices";
+import ApiServices, { BASE_URL } from "../auth/ApiServices";
 import * as qs from "qs"
 
 export default function ManageAssignment() {
