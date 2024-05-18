@@ -1,5 +1,5 @@
 import axios from "axios";
-export const BASE_URL="http://localhost:4001/"
+export const BASE_URL="https://mern-stack-project-omega.vercel.app/"
 class ApiServices{
     getToken(){
         let obj={
