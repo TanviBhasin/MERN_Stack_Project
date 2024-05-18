@@ -810,6 +810,7 @@
     "uuid": "^8.3.2",
     "v8-to-istanbul": "^8.1.1",
     "vary": "^1.1.2",
+    "vercel": "^34.2.0",
     "w3c-hr-time": "^1.0.2",
     "w3c-xmlserializer": "^2.0.0",
     "walker": "^1.0.8",
