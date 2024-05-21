@@ -1,17 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
-export default function AdminHeader(){
-    const token = localStorage.getItem("token")
-    const nav = useNavigate()
+export default function AdminHeader() {
+    const token = localStorage.getItem("token");
+    const nav = useNavigate();
+    
     const logout = () => {
-        localStorage.clear()
-        nav("/admin/login")
-        toast.success("Logout Successfully")
-    }
-    return(
+        localStorage.clear();
+        nav("/admin/login");
+        toast.success("Logout Successfully");
+    };
+
+    return (
         <>
-        {/* Navbar Start */}
+            {/* Navbar Start */}
             <nav className="navbar navbar-expand-lg bg-white navbar-light shadow p-0">
                 <Link
                     to={"/admin"}
@@ -38,7 +40,7 @@ export default function AdminHeader(){
                                 Home
                             </Link>
                         </li>
-                        <div className="nav-item dropdown">
+                        <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 Departments
                             </Link>
@@ -50,8 +52,8 @@ export default function AdminHeader(){
                                     Manage Departments
                                 </Link>
                             </div>
-                        </div>
-                        <div className="nav-item dropdown">
+                        </li>
+                        <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 Courses
                             </Link>
@@ -63,8 +65,8 @@ export default function AdminHeader(){
                                     Manage Courses
                                 </Link>
                             </div>
-                        </div>
-                        <div className="nav-item dropdown">
+                        </li>
+                        <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 Branch
                             </Link>
@@ -76,8 +78,8 @@ export default function AdminHeader(){
                                     Manage Branch
                                 </Link>
                             </div>
-                        </div>
-                        <div className="nav-item dropdown">
+                        </li>
+                        <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 Subjects
                             </Link>
@@ -95,8 +97,8 @@ export default function AdminHeader(){
                                     Manage Assigned Subject
                                 </Link>
                             </div>
-                        </div>
-                        <div className="nav-item dropdown">
+                        </li>
+                        <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 Staff
                             </Link>
@@ -108,8 +110,8 @@ export default function AdminHeader(){
                                     Manage Staff
                                 </Link>
                             </div>
-                        </div>
-                        <div className="nav-item dropdown">
+                        </li>
+                        <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" data-bs-toggle="dropdown">
                                 Students
                             </Link>
@@ -121,20 +123,18 @@ export default function AdminHeader(){
                                     Manage Students
                                 </Link>
                             </div>
-                        </div>
+                        </li>
                         <li className="nav-item">
                             <Link to={"/admin/feedback"} className="nav-item nav-link">
                                 Feedback
                             </Link>
                         </li>
-                        {!token ? (
-                            <li className="nav-item">
+                        <li className="nav-item">
+                            {!token ? (
                                 <Link to={"/admin/login"} className="nav-item nav-link">
                                     <span className="fa fa-user" /> Login
                                 </Link>
-                            </li>
-                        ) : (
-                            <li className="nav-item">
+                            ) : (
                                 <Link
                                     to="#"
                                     className="nav-item nav-link"
@@ -146,12 +146,12 @@ export default function AdminHeader(){
                                 >
                                     <span className="fa fa-user" /> Logout
                                 </Link>
-                            </li>
-                        )}
+                            )}
+                        </li>
                     </ul>
                 </div>
             </nav>
             {/* Navbar End */}
         </>
-    )
+    );
 }
