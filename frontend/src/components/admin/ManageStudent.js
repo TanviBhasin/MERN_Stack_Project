@@ -101,7 +101,7 @@ useEffect(() => {
                         <td>{el.semester}</td>
                         <td>{el.address}</td>
                         <td>
-                        <img src={"http://localhost:4001/"+el?.image} style={{height:"100px", width:"100px"}}/>
+                        <img src={BASE_URL+el?.image} style={{height:"100px", width:"100px"}}/>
                         </td>
                         <td>             
                             <Link to={"/admin/editstudent/"+el._id} className="text-primary">

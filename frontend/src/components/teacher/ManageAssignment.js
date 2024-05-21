@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
-import ApiServices from "../auth/ApiServices";
+import ApiServices, { BASE_URL } from "../auth/ApiServices";
 import * as qs from "qs"
 
 export default function ManageAssignment() {
@@ -99,7 +99,7 @@ export default function ManageAssignment() {
                     <td>{el?.branchId?.branchName}</td>
                     <td>{el?.subjectId?.subjectName}</td>
                     <td>
-                    <img src={"http://localhost:4001/"+el?.assignment}  style={{height:"80px", width:"80px"}}/>
+                    <img src={BASE_URL+el?.assignment}  style={{height:"80px", width:"80px"}}/>
                     </td>
                     <td>{el?.duedate}</td>
                     <td>{el?.marks}</td>
