@@ -12,75 +12,220 @@ export default function AdminHeader(){
     return(
         <>
         {/* Navbar Start */}
-        <nav className="navbar navbar-expand-lg bg-white navbar-light shadow p-0">
-    <div className="container-fluid">
-        <Link to={"/admin"} className="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <nav className="navbar navbar-expand-lg bg-white navbar-light shadow p-0">
+            <Link
+            to={"/admin"}
+            className="navbar-brand d-flex align-items-center px-4 px-lg-5"
+            >
             <h2 className="m-0 text-primary">
                 <i className="fa fa-book me-3" />
                 eLEARNING
             </h2>
-        </Link>
-        <button
-            className="navbar-toggler me-4"
+            </Link>
+            <button
             type="button"
+            className="navbar-toggler me-4"
             data-bs-toggle="collapse"
             data-bs-target="#navbarCollapse"
-            aria-controls="navbarCollapse"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-        >
+            >
             <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarCollapse">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            </button>
+            
+            <div className="navbar-nav mx-auto p-1">
+            <ul className="navbar-nav">
+                <div className="nav-item">
                 <li className="nav-item">
-                    <Link to={"/admin"} className="nav-link">
-                        Home
-                    </Link>
+                <Link to={"/admin"} className="nav-item nav-link">
+                Home
+                </Link>
                 </li>
-                <li className="nav-item dropdown">
+                </div>
+           
+                <div className="nav-item dropdown">
+                            <Link
+                                className="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown"
+                            >
+                                Departments
+                            </Link>
+                        <div className="dropdown-menu fade-down m-0">
+                            <li className="nav-item">
+                                    <Link to={"/admin/adddept"} className="dropdown-item">
+                                    Add Departments
+                                    </Link>
+                                    </li>
+
+                                    <li className="nav-item">
+                                    <Link to={"/admin/managedept"} className="dropdown-item">
+                                    Manage Departments
+                                    </Link>
+                                    </li>
+                        </div>
+                    </div> 
+
+
+                    <div className="nav-item dropdown">
                     <Link
                         className="nav-link dropdown-toggle"
-                        to="#"
-                        id="navbarDropdown"
-                        role="button"
                         data-bs-toggle="dropdown"
-                        aria-expanded="false"
                     >
-                        Departments
+                        Courses
                     </Link>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li>
-                            <Link to={"/admin/adddept"} className="dropdown-item">
-                                Add Departments
+                    <div className="dropdown-menu fade-down m-0">
+                            <li className="nav-item">
+                            <Link to={"/admin/addcourses"} className="dropdown-item">
+                            Add Courses
                             </Link>
-                        </li>
-                        <li>
-                            <Link to={"/admin/managedept"} className="dropdown-item">
-                                Manage Departments
-                            </Link>
-                        </li>
-                    </ul>
-                </li>
-                {/* Add other navbar items similarly */}
-            </ul>
-            <ul className="navbar-nav">
-                <li className="nav-item">
-                    {!token ? (
-                        <Link to={"/admin/login"} className="nav-link">
-                            <span className="fa fa-user" /> Login
-                        </Link>
-                    ) : (
-                        <button className="nav-link" onClick={logout} style={{ border: 'none', background: 'none' }}>
-                            <span className="fa fa-user" /> Logout
-                        </button>
-                    )}
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+                            </li>
 
+                            <li className="nav-item">
+                            <Link to={"/admin/managecourses"} className="dropdown-item">
+                            Manage Courses
+                            </Link>
+                            </li>
+                    </div>
+                    </div> 
+
+
+                    <div className="nav-item dropdown">
+                    <Link
+                        className="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                    >
+                        Branch
+                    </Link>
+                    <div className="dropdown-menu fade-down m-0">
+                            <li className="nav-item">
+                            <Link to={"/admin/addbranch"} className="dropdown-item">
+                            Add Branch
+                            </Link>
+                            </li>
+                            
+                            <li className="nav-item">
+                            <Link to={"/admin/managebranch"} className="dropdown-item">
+                            Manage Branch
+                            </Link>
+                            </li>
+
+                    </div>
+                    </div> 
+
+
+                    <div className="nav-item dropdown">
+                    <Link
+                        className="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                    >
+                        Subjects
+                    </Link>
+                    <div className="dropdown-menu fade-down m-0">
+                            <li className="nav-item">
+                            <Link to={"/admin/addsubject"} className="dropdown-item">
+                            Add Subject
+                            </Link>
+                            </li>
+
+                            <li className="nav-item">
+                            <Link to={"/admin/managesubject"} className="dropdown-item">
+                            Manage Subject
+                            </Link>
+                            </li>
+
+                            <li className="nav-item">
+                            <Link to={"/admin/assign"}className="dropdown-item">
+                            Assign Subject
+                            </Link>
+                            </li>
+
+                            <li className="nav-item">
+                            <Link to={"/admin/manageassignsub"} className="dropdown-item">
+                            Manage Assigned Subject
+                            </Link>
+                            </li>
+
+                    </div>
+                    </div> 
+
+
+                    <div className="nav-item dropdown">
+                    <Link
+                        className="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                    >
+                        Staff
+                    </Link>
+                    <div className="dropdown-menu fade-down m-0">
+                            <li className="nav-item">
+                            <Link to={"/admin/addstaff"} className="dropdown-item">
+                            Add Staff
+                            </Link>
+                            </li>
+
+                            <li className="nav-item">
+                            <Link to={"/admin/managestaff"} className="dropdown-item">
+                            Manage Staff
+                            </Link>
+                            </li>
+
+                    </div>
+                    </div>
+
+
+                     <div className="nav-item dropdown">
+                    <Link
+                        className="nav-link dropdown-toggle"
+                        data-bs-toggle="dropdown"
+                    >
+                        Students
+                    </Link>
+                    <div className="dropdown-menu fade-down m-0">
+                            <li className="nav-item">
+                            <Link to={"/admin/addstudent"} className="dropdown-item">
+                            Add Students
+                            </Link>
+                            </li>
+
+                            <li className="nav-item">
+                            <Link to={"/admin/managestudent"} className="dropdown-item">
+                            Manage Students
+                            </Link>
+                            </li>
+
+                    </div>
+                    </div>
+
+
+                    <div className="nav-item">
+                    <li className="nav-item">
+                    <Link to={"/admin/feedback"} className="nav-item nav-link">
+                    Feedback
+                    </Link>
+                    </li>
+                    </div>
+
+
+                    <div className="nav-item">
+                    <li className="nav-item">
+                    {!token?
+                   <Link to={"/admin/login"} className="nav-item nav-link">
+                    <span className="fa fa-user" /> Login
+                    </Link>  :
+                    <button 
+                    className="nav-item nav-link"
+                    onClick={logout}
+                    style={{ border: 'none', background: 'none'}}
+                >
+                    <span className="fa fa-user" />Logout
+                </button>    
+                }
+                </li>
+                </div>
+                
+                </ul>
+              
+                
+            </div>
+        </nav>
         {/* Navbar End */}
         
         </>
