@@ -203,8 +203,6 @@ export default function AdminHeader(){
                     </li>
                     </div>
 
-                    <div className="nav-item">
-                    <li className="nav-item">
                     {!token?
                    <Link to={"/admin/login"} className="nav-item nav-link">
                     <span className="fa fa-user" /> login
@@ -217,8 +215,6 @@ export default function AdminHeader(){
                     <span className="fa fa-user" />Logout
                 </button>    
                 }
-                </li>
-                </div>
                 
                 </ul>
               
