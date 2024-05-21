@@ -202,21 +202,27 @@ export default function AdminHeader(){
                     </Link>
                     </li>
                     </div>
-                
-                </ul>
-              
+
+                    <div className="nav-item">
+                    <li className="nav-item">
                     {!token?
-                   <Link to={"/admin/login"} className="btn login mt-1">
+                   <Link to={"/admin/login"} className="nav-item nav-link">
                     <span className="fa fa-user" /> login
                     </Link>  :
                     <button 
-                    className="nav-item nav-link "
+                    className="nav-item nav-link"
                     onClick={logout}
                     style={{ border: 'none', background: 'none'}}
                 >
                     <span className="fa fa-user" />Logout
                 </button>    
                 }
+                </li>
+                </div>
+                
+                </ul>
+              
+                    
 
             </div>
         </nav>
