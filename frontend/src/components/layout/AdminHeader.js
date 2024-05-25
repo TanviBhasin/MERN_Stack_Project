@@ -6,7 +6,7 @@ export default function AdminHeader(){
     const nav = useNavigate()
     const logout=()=>{
        localStorage.clear()
-       nav("/admin/login")
+       nav("/admin")
         toast.success("Logout Successfully")
     }
     return(
